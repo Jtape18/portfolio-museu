@@ -5,7 +5,11 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#090b10]">
       <section className="relative min-h-[80vh] w-full overflow-hidden md:min-h-screen">
-        <img src="/imagens-museu/View on the Rijksmuseum from a helicopter.png" alt="Museu" className="absolute inset-0 h-full w-full object-cover" />
+        <img
+          src="/imagens-museu/A picture of a gallery showing a ship model and two paintings..png"
+          alt="Museu"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black/70" />
 
         <div className="absolute right-0 bottom-0 left-0 px-8 pb-10 md:px-20 md:pb-14">
