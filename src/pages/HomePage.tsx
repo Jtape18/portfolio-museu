@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { portfolioDisciplines } from '../data/portfolioData'
+import { portfolioDisciplines } from '../features/portfolio/data'
 
 export default function HomePage() {
   return (

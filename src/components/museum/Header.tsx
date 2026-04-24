@@ -37,8 +37,13 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur-sm">
       <div className="flex h-16 items-center justify-between px-6 md:px-14">
-        <Link to="/" className="flex items-center gap-3">
-          <span className="text-base font-bold tracking-widest text-white uppercase">Portfólio Museu</span>
+        <Link to="/" className="inline-flex items-center gap-2.5">
+          <img
+            src="/icon-site.png"
+            alt="Ícone do portfólio"
+            className="h-8 w-8 shrink-0 rounded-sm object-cover"
+          />
+          <span className="text-base leading-none font-bold tracking-widest text-white uppercase">Portfólio Museu</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

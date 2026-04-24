@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { portfolioDisciplines } from '../data/portfolioData'
+import { portfolioDisciplines } from '../features/portfolio/data'
 
 export default function ActivityPage() {
   const { disciplineId, activityId } = useParams()

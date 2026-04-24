@@ -1,5 +1,6 @@
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
-import { portfolioDisciplines } from '../data/portfolioData'
+import ActivityCard from '../features/discipline/components/ActivityCard'
+import { portfolioDisciplines } from '../features/portfolio/data'
 
 export default function DisciplinePage() {
   const { disciplineId } = useParams()
@@ -8,11 +9,6 @@ export default function DisciplinePage() {
 
   if (!discipline) {
     return <Navigate to="/" replace />
-  }
-
-  const getShortDescription = (text: string) => {
-    const firstSentence = text.split('. ')[0] ?? text
-    return firstSentence.length > 90 ? `${firstSentence.slice(0, 90)}...` : `${firstSentence}.`
   }
 
   return (
@@ -48,30 +44,11 @@ export default function DisciplinePage() {
 
         <div className="grid gap-0 md:grid-cols-2">
           {discipline.activities.map((activity) => (
-            <article
+            <ActivityCard
               key={activity.id}
-              className="group relative min-h-[420px] cursor-pointer overflow-hidden md:min-h-[600px] lg:min-h-[760px]"
-              onClick={() => navigate(`/disciplina/${discipline.id}/atividade/${activity.id}`)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault()
-                  navigate(`/disciplina/${discipline.id}/atividade/${activity.id}`)
-                }
-              }}
-              role="link"
-              tabIndex={0}
-            >
-              <img
-                src={activity.image}
-                alt={activity.title}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/75" />
-              <div className="absolute right-0 bottom-0 left-0 px-8 pb-8 md:px-10 md:pb-10">
-                <h2 className="text-lg font-bold text-white md:text-2xl">{activity.title}</h2>
-                <p className="mt-1 text-xs text-white/85 md:text-sm">{getShortDescription(activity.description)}</p>
-              </div>
-            </article>
+              activity={activity}
+              onOpen={(activityId) => navigate(`/disciplina/${discipline.id}/atividade/${activityId}`)}
+            />
           ))}
         </div>
       </section>
