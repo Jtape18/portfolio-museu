@@ -26,10 +26,23 @@ export default function HomePage() {
           </p>
           <h2 className="text-2xl font-bold text-white md:text-3xl">Apresentação</h2>
           <p className="mt-4 text-base leading-relaxed text-white/85 md:text-xl">
-            Este portfólio foi desenvolvido como instrumento de avaliação reflexiva das disciplinas Fases da Vida III e
-            Psicologia Positiva, cursadas no 5º período em 2026. A proposta organiza experiências de aprendizagem em
-            formato de museu, reunindo atividades significativas, análises críticas e articulações entre teoria e
-            prática.
+            O presente portfólio tem como objetivo apresentar, de forma reflexiva e crítica, as aprendizagens
+            construídas ao longo do semestre nas disciplinas de Psicologia Positiva e Fases da Vida III. Essas áreas do
+            conhecimento, embora distintas em seus enfoques, se complementam ao possibilitar uma compreensão ampla do
+            desenvolvimento humano, especialmente nas fases da vida adulta e da velhice, considerando aspectos
+            emocionais, sociais e existenciais.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-white/75 md:text-base">
+            A Psicologia Positiva, conforme proposta por Martin Seligman, dedica-se ao estudo científico dos fatores que
+            contribuem para o bem-estar e para uma vida significativa, indo além da ênfase tradicional da psicologia nos
+            aspectos patológicos. Já Fases da Vida III aborda o desenvolvimento humano na vida adulta e na velhice, com
+            base em transformações físicas, cognitivas e psicossociais ao longo dessas etapas.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-white/75 md:text-base">
+            O desenvolvimento deste portfólio baseia-se na seleção de atividades significativas vivenciadas entre
+            fevereiro e maio de 2026, incluindo debates, análises de filmes, discussões de textos e dinâmicas em sala.
+            Cada atividade foi organizada em perspectiva reflexiva, articulando teoria e prática e destacando impactos
+            no processo de aprendizagem, na formação acadêmica e na construção profissional.
           </p>
           <div className="mt-6 grid gap-2 border-l-2 border-[#ef8354] pl-4 text-sm text-white/80 md:text-base">
             <p>
@@ -47,9 +60,9 @@ export default function HomePage() {
             as reflexões construídas ao longo do semestre.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-white/65 md:text-base">
-            O objetivo deste material é evidenciar aprendizados, avanços e desafios vividos durante o semestre,
-            destacando a construção do pensamento crítico e a conexão entre os referenciais teóricos e as práticas
-            desenvolvidas em aula.
+            O objetivo deste material é evidenciar aprendizados, avanços e desafios vividos ao longo do semestre,
+            reforçando a importância de compreender o ser humano de forma integral e de integrar teoria e prática para
+            uma atuação ética, sensível e tecnicamente fundamentada.
           </p>
         </div>
       </section>

@@ -1,12 +1,18 @@
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import { portfolioDisciplines } from '../data/portfolioData'
 
 export default function DisciplinePage() {
   const { disciplineId } = useParams()
+  const navigate = useNavigate()
   const discipline = portfolioDisciplines.find((item) => item.id === disciplineId)
 
   if (!discipline) {
     return <Navigate to="/" replace />
+  }
+
+  const getShortDescription = (text: string) => {
+    const firstSentence = text.split('. ')[0] ?? text
+    return firstSentence.length > 90 ? `${firstSentence.slice(0, 90)}...` : `${firstSentence}.`
   }
 
   return (
@@ -44,7 +50,16 @@ export default function DisciplinePage() {
           {discipline.activities.map((activity) => (
             <article
               key={activity.id}
-              className="group relative min-h-[420px] overflow-hidden md:min-h-[600px] lg:min-h-[760px]"
+              className="group relative min-h-[420px] cursor-pointer overflow-hidden md:min-h-[600px] lg:min-h-[760px]"
+              onClick={() => navigate(`/disciplina/${discipline.id}/atividade/${activity.id}`)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault()
+                  navigate(`/disciplina/${discipline.id}/atividade/${activity.id}`)
+                }
+              }}
+              role="link"
+              tabIndex={0}
             >
               <img
                 src={activity.image}
@@ -54,7 +69,7 @@ export default function DisciplinePage() {
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/75" />
               <div className="absolute right-0 bottom-0 left-0 px-8 pb-8 md:px-10 md:pb-10">
                 <h2 className="text-lg font-bold text-white md:text-2xl">{activity.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-white/85 md:text-base">{activity.description}</p>
+                <p className="mt-1 text-xs text-white/85 md:text-sm">{getShortDescription(activity.description)}</p>
               </div>
             </article>
           ))}
