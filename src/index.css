@@ -7,8 +7,15 @@
 
   body {
     margin: 0;
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Signika", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #090b10;
     color: #e5e7eb;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "MuseoModerno", "Signika", Inter, system-ui, sans-serif;
+    font-weight: 800;
   }
 }

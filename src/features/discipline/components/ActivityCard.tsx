@@ -1,6 +1,5 @@
 import type { KeyboardEvent } from 'react'
 import type { PortfolioActivity } from '../../portfolio/types'
-import { getShortDescription } from '../utils/getShortDescription'
 
 interface ActivityCardProps {
   activity: PortfolioActivity
@@ -32,8 +31,9 @@ export default function ActivityCard({ activity, onOpen }: ActivityCardProps) {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/75" />
       <div className="absolute right-0 bottom-0 left-0 px-8 pb-8 md:px-10 md:pb-10">
-        <h2 className="text-lg font-bold text-white md:text-2xl">{activity.title}</h2>
-        <p className="mt-1 text-xs text-white/85 md:text-sm">{getShortDescription(activity.description)}</p>
+        <h2 className="relative block w-fit origin-left text-lg font-bold text-white transition-transform duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-white/90 after:transition-all after:duration-300 after:content-[''] group-hover:scale-105 group-hover:after:w-full md:text-2xl">
+          {activity.title}
+        </h2>
       </div>
     </article>
   )
