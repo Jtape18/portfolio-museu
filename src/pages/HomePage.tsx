@@ -111,7 +111,7 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/75" />
             <div className="absolute right-0 bottom-0 left-0 px-8 pb-10 md:pb-12">
-              <h2 className="relative block w-fit origin-left text-2xl font-bold tracking-wide text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] transition-transform duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-white/90 after:transition-all after:duration-300 after:content-[''] group-hover:scale-105 group-hover:after:w-full">
+              <h2 className="relative block w-fit origin-left text-2xl font-bold tracking-wide text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] transition-transform duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-white/90 after:transition-all after:duration-300 after:content-[''] group-hover:scale-105 group-hover:after:w-full group-active:scale-105 group-active:after:w-full">
                 {discipline.title}
               </h2>
               <span className="mt-4 block text-sm font-semibold text-white/95">Ver atividades</span>
