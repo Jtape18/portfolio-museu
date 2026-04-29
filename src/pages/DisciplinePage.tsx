@@ -1,4 +1,6 @@
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
+import BackToTopButton from '../components/ui/BackToTopButton'
+import FadeInSection from '../components/ui/FadeInSection'
 import ActivityCard from '../features/discipline/components/ActivityCard'
 import { portfolioDisciplines } from '../features/portfolio/data'
 
@@ -24,34 +26,39 @@ export default function DisciplinePage() {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#0f141e] px-8 py-10 md:px-20">
-        <div className="max-w-5xl">
-          <h2 className="text-2xl font-bold text-white md:text-3xl">Introdução da Disciplina</h2>
-          <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
-            Nesta seção, apresento as atividades selecionadas de <strong>{discipline.title}</strong>, com foco no
-            processo de aprendizagem, na análise dos conceitos centrais e na forma como cada experiência contribuiu para
-            minha formação acadêmica e profissional.
-          </p>
+      <FadeInSection className="bg-[#090b10] py-8 md:py-10">
+        <div className="mx-auto w-full max-w-6xl px-8 md:px-20">
+          <div className="mb-6 flex max-w-5xl items-center justify-between gap-4">
+            <Link to="/" className="text-sm font-semibold text-[#ef8354] transition-colors hover:text-[#f29a74]">
+              ← Voltar para home
+            </Link>
+          </div>
+          <div className="max-w-5xl">
+            <h2 className="text-2xl font-bold text-white md:text-3xl">Introdução da Disciplina</h2>
+            <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
+              Nesta seção, apresento as atividades selecionadas de <strong>{discipline.title}</strong>, com foco no
+              processo de aprendizagem, na análise dos conceitos centrais e na forma como cada experiência contribuiu para
+              minha formação acadêmica e profissional.
+            </p>
+          </div>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="py-14">
-        <div className="mb-8 px-8 md:px-20">
+      <FadeInSection className="bg-[#090b10] py-14">
+        <div className="grid gap-0 md:grid-cols-2">
+          {discipline.activities.map((activity) => (
+            <FadeInSection key={activity.id}>
+              <ActivityCard activity={activity} onOpen={(activityId) => navigate(`/disciplina/${discipline.id}/atividade/${activityId}`)} />
+            </FadeInSection>
+          ))}
+        </div>
+        <div className="mx-auto mt-10 flex max-w-6xl flex-wrap items-center justify-between gap-4 px-8 md:px-20">
           <Link to="/" className="text-sm font-semibold text-[#ef8354] transition-colors hover:text-[#f29a74]">
             ← Voltar para home
           </Link>
+          <BackToTopButton />
         </div>
-
-        <div className="grid gap-0 md:grid-cols-2">
-          {discipline.activities.map((activity) => (
-            <ActivityCard
-              key={activity.id}
-              activity={activity}
-              onOpen={(activityId) => navigate(`/disciplina/${discipline.id}/atividade/${activityId}`)}
-            />
-          ))}
-        </div>
-      </section>
+      </FadeInSection>
     </div>
   )
 }

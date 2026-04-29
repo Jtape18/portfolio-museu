@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import BackToTopButton from '../components/ui/BackToTopButton'
+import FadeInSection from '../components/ui/FadeInSection'
 import { portfolioDisciplines } from '../features/portfolio/data'
 
 export default function HomePage() {
@@ -6,7 +8,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#090b10]">
       <section className="relative min-h-[80vh] w-full overflow-hidden md:min-h-screen">
         <img
-          src="/imagens-museu/A picture of a gallery showing a ship model and two paintings..png"
+          src="/fotos-marcela/WhatsApp Image 2026-04-24 at 16.55.58.jpeg"
           alt="Museu"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -14,87 +16,57 @@ export default function HomePage() {
 
         <div className="absolute right-0 bottom-0 left-0 px-8 pb-10 md:px-20 md:pb-14">
           <h1 className="text-5xl leading-tight font-bold text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] sm:text-7xl md:text-8xl lg:text-[6rem]">
-            Portfólio Museu
+            Portfólio
           </h1>
           <p className="mt-2 max-w-3xl text-base font-normal text-white drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] md:text-lg">
-            Apresentação reflexiva das disciplinas Fases da Vida III e Psicologia Positiva, no formato de galeria com
-            atividades selecionadas do semestre.
+            Apresentação reflexiva das disciplinas Fases da Vida III e Psicologia Positiva sob perspectiva de Marcela
+            Cristinne Camarinha Gonçalves. <br />
+            Centro Universitário do Estado do Pará.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#0d1016] px-8 py-14 md:px-20 md:py-16">
-        <div className="max-w-5xl">
-          <p className="text-xs font-semibold tracking-[0.18em] text-white/70 uppercase">
-            Atividade Integrada - 5º Período | 2026
-          </p>
-          <h2 className="text-2xl font-bold text-white md:text-3xl">Apresentação</h2>
-          <p className="mt-4 text-base leading-relaxed text-white/85 md:text-xl">
-            O presente portfólio tem como objetivo apresentar, de forma reflexiva e crítica, as aprendizagens
-            construídas ao longo do semestre nas disciplinas de Psicologia Positiva e Fases da Vida III. Essas áreas do
-            conhecimento, embora distintas em seus enfoques, se complementam ao possibilitar uma compreensão ampla do
-            desenvolvimento humano, especialmente nas fases da vida adulta e da velhice, considerando aspectos
-            emocionais, sociais e existenciais.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-white/75 md:text-base">
-            A Psicologia Positiva, conforme proposta por Martin Seligman, dedica-se ao estudo científico dos fatores que
-            contribuem para o bem-estar e para uma vida significativa, indo além da ênfase tradicional da psicologia nos
-            aspectos patológicos. Já Fases da Vida III aborda o desenvolvimento humano na vida adulta e na velhice, com
-            base em transformações físicas, cognitivas e psicossociais ao longo dessas etapas.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-white/75 md:text-base">
-            O desenvolvimento deste portfólio baseia-se na seleção de atividades significativas vivenciadas entre
-            fevereiro e maio de 2026, incluindo debates, análises de filmes, discussões de textos e dinâmicas em sala.
-            Cada atividade foi organizada em perspectiva reflexiva, articulando teoria e prática e destacando impactos
-            no processo de aprendizagem, na formação acadêmica e na construção profissional.
-          </p>
-          <div className="mt-6 grid gap-2 border-l-2 border-[#ef8354] pl-4 text-sm text-white/80 md:text-base">
-            <p>
-              <strong>Aluna:</strong> Marcela Cristinne Camarinha Gonçaves
-            </p>
-            <p>
-              <strong>Disciplinas:</strong> Fases da Vida III e Psicologia Positiva
-            </p>
-            <p>
-              <strong>Entrega:</strong> 15/05 (com tolerância até 16/05, conforme orientação)
-            </p>
+      <FadeInSection className="bg-[#090b10] px-8 py-16 md:px-20 md:py-20">
+        <div className="mx-auto flex max-w-6xl flex-col gap-12">
+          <div>
+            <h2 className="text-center text-2xl font-bold text-white md:text-3xl">Introdução</h2>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-white/70 md:text-base">
-            Cada quadro abaixo representa uma disciplina. Ao clicar, você acessa uma nova tela com os itens internos e
-            as reflexões construídas ao longo do semestre.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-white/65 md:text-base">
-            O objetivo deste material é evidenciar aprendizados, avanços e desafios vividos ao longo do semestre,
-            reforçando a importância de compreender o ser humano de forma integral e de integrar teoria e prática para
-            uma atuação ética, sensível e tecnicamente fundamentada.
-          </p>
-        </div>
-      </section>
 
-      <section className="border-y border-white/10 bg-[#121722] px-8 py-10 md:px-20">
-        <div className="grid max-w-6xl gap-6 md:grid-cols-3">
-          <article>
-            <h3 className="text-sm font-semibold tracking-widest text-white/90 uppercase">Capa e contexto</h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Identificação acadêmica, disciplinas envolvidas e contextualização da proposta integrada.
+          <article className="mx-auto w-full max-w-5xl">
+            <p className="text-justify text-sm leading-relaxed text-white/80 md:text-base">
+              Este Portfólio reúne e integra aprendizagens desenvolvidas nas disciplinas de Psicologia Positiva e
+              Fases da Vida III, cursadas ao longo do quinto semestre da graduação em Psicologia. Ambas as disciplinas
+              contribuíram de forma significativa para a ampliação da compreensão sobre o comportamento humano,
+              especialmente ao integrar aspectos subjetivos do bem-estar com as transformações que ocorrem ao longo do
+              ciclo vital.
             </p>
-          </article>
-          <article>
-            <h3 className="text-sm font-semibold tracking-widest text-white/90 uppercase">Produtos de aprendizagem</h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Seleção de atividades significativas com análise reflexiva, articulação teoria-prática e síntese crítica.
+            <p className="mt-4 text-justify text-sm leading-relaxed text-white/75 md:text-base">
+              A disciplina de Psicologia Positiva proporcionou contato com uma abordagem que busca compreender e
+              promover aspectos saudáveis e funcionais da vida humana. Entre os conceitos centrais, destacam-se
+              emoções positivas, forças de caráter, engajamento, sentido de vida e relacionamentos saudáveis, com
+              destaque para o modelo PERMA, proposto por Martin Seligman. Atividades como a construção do Ikigai,
+              análises do filme Soul e dinâmicas em grupo fortaleceram a reflexão sobre propósito, autoconhecimento e
+              desenvolvimento do bem-estar como processo contínuo.
             </p>
-          </article>
-          <article>
-            <h3 className="text-sm font-semibold tracking-widest text-white/90 uppercase">Autoavaliação</h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Registro de avanços, dificuldades e definição de novos objetivos de desenvolvimento pessoal e acadêmico.
+            <p className="mt-4 text-justify text-sm leading-relaxed text-white/75 md:text-base">
+              A disciplina de Fases da Vida III aprofundou o estudo das etapas do desenvolvimento, com ênfase na vida
+              adulta e no envelhecimento. Foram discutidas mudanças físicas, cognitivas, emocionais e sociais, além de
+              temas contemporâneos como adultez emergente, alimentação e qualidade de vida. Debates e análises de
+              documentários contribuíram para uma visão crítica e contextualizada do desenvolvimento humano, reforçando
+              a importância de compreender o indivíduo em sua totalidade.
+            </p>
+            <p className="mt-4 text-justify text-sm leading-relaxed text-white/70 md:text-base">
+              Os objetivos de aprendizagem deste portfólio envolvem compreender os principais conceitos das
+              disciplinas, relacioná-los com situações práticas e desenvolver postura crítica e reflexiva. A
+              organização foi construída a partir da seleção de conteúdos e experiências significativas, com registros
+              reflexivos e revisão dos materiais trabalhados ao longo do semestre, buscando coerência, clareza e
+              profundidade na apresentação dos aprendizados.
             </p>
           </article>
         </div>
-      </section>
+      </FadeInSection>
 
-      <section className="grid w-full gap-0 md:grid-cols-2">
+      <FadeInSection className="grid w-full gap-0 md:grid-cols-2">
         {portfolioDisciplines.map((discipline) => (
           <Link
             key={discipline.id}
@@ -116,7 +88,12 @@ export default function HomePage() {
             </div>
           </Link>
         ))}
-      </section>
+      </FadeInSection>
+      <FadeInSection className="bg-[#090b10] px-8 py-10 md:px-20">
+        <div className="text-right">
+          <BackToTopButton />
+        </div>
+      </FadeInSection>
     </div>
   )
 }

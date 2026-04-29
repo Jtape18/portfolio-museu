@@ -56,12 +56,6 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/"
-            className="rounded-sm bg-[#d4562f] px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-[#b8411f]"
-          >
-            Ver quadros
-          </Link>
         </nav>
 
         <button
@@ -87,13 +81,6 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/"
-            onClick={() => setMenuOpen(false)}
-            className="rounded-sm bg-[#d4562f] px-5 py-2.5 text-center text-sm font-bold text-white transition-colors hover:bg-[#b8411f]"
-          >
-            Ver quadros
-          </Link>
         </nav>
       )}
     </header>

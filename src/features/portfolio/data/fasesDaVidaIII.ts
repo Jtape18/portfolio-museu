@@ -4,7 +4,7 @@ export const fasesDaVidaIIIDiscipline: PortfolioDiscipline = {
   id: 'fases-da-vida-iii',
   title: 'Fases da Vida III',
   subtitle: 'Processos psicossociais no ciclo vital',
-  coverImage: '/imagens-museu/ab454832-8f21-4b47-99f4-376ff0f75687.png',
+  coverImage: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.29.49 (1).jpeg',
   activities: [
     {
       id: 'violencia-genero',
