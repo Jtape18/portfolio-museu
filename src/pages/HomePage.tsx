@@ -41,26 +41,57 @@ export default function HomePage() {
               ciclo vital.
             </p>
             <p className="mt-4 text-justify text-sm leading-relaxed text-white/75 md:text-base">
-              A disciplina de Psicologia Positiva proporcionou contato com uma abordagem que busca compreender e
-              promover aspectos saudáveis e funcionais da vida humana. Entre os conceitos centrais, destacam-se
-              emoções positivas, forças de caráter, engajamento, sentido de vida e relacionamentos saudáveis, com
-              destaque para o modelo PERMA, proposto por Martin Seligman. Atividades como a construção do Ikigai,
-              análises do filme Soul e dinâmicas em grupo fortaleceram a reflexão sobre propósito, autoconhecimento e
-              desenvolvimento do bem-estar como processo contínuo.
+              A disciplina de Psicologia Positiva proporcionou o contato com uma abordagem relativamente recente dentro
+              da Psicologia, que busca compreender e promover aspectos saudáveis e funcionais da vida humana, ao invés
+              de focar exclusivamente em patologias. Entre os conceitos centrais trabalhados, destacam-se o estudo das
+              emoções positivas, o desenvolvimento das forças de caráter, o engajamento, o sentido de vida e a
+              construção de relacionamentos saudáveis. Um dos principais referenciais teóricos abordados foi o modelo
+              PERMA, proposto por Martin Seligman, que organiza o bem-estar em cinco dimensões: emoções positivas ,
+              engajamento, relacionamentos, sentido e realização. Além disso, foram realizadas atividades como a
+              construção do Ikigai, que favoreceu a reflexão sobre propósito de vida, e análises de produções
+              audiovisuais, como o filme “Soul”, que possibilitaram discutir, de forma prática, questões relacionadas
+              ao sentido da existência e à valorização das experiências cotidianas. Outro ponto relevante na disciplina
+              foi a compreensão de que o bem-estar não é apenas um estado emocional momentâneo, mas um processo
+              contínuo que pode ser desenvolvido por meio de práticas intencionais, como a gratidão, o cultivo de
+              relações positivas e o autoconhecimento. As atividades em grupo e dinâmicas propostas em sala, baseadas
+              em metodologias ativas, contribuíram para uma aprendizagem mais significativa, pois permitiram vivenciar
+              na prática os conceitos estudados, além de estimular a troca de experiências e diferentes perspectivas
+              entre os colegas.
             </p>
             <p className="mt-4 text-justify text-sm leading-relaxed text-white/75 md:text-base">
-              A disciplina de Fases da Vida III aprofundou o estudo das etapas do desenvolvimento, com ênfase na vida
-              adulta e no envelhecimento. Foram discutidas mudanças físicas, cognitivas, emocionais e sociais, além de
-              temas contemporâneos como adultez emergente, alimentação e qualidade de vida. Debates e análises de
-              documentários contribuíram para uma visão crítica e contextualizada do desenvolvimento humano, reforçando
-              a importância de compreender o indivíduo em sua totalidade.
+              A disciplina de Fases da Vida III aprofundou o estudo das etapas do desenvolvimento, com ênfase nas
+              fases adultas e no envelhecimento. A partir de referenciais teóricos clássicos, como Papalia, foi
+              possível compreender que o desenvolvimento humano é um processo contínuo, influenciado por fatores
+              biológicos, psicológicos, sociais e culturais. Foram discutidas as mudanças físicas e cognitivas que
+              ocorrem ao longo da vida, bem como os desafios emocionais e sociais enfrentados em cada etapa. Um dos
+              aspectos mais marcantes dessa disciplina foi a abordagem crítica de temas contemporâneos, como o
+              desenvolvimento psicossocial na vida adulta, adultez emergente no Brasil, a influência da alimentação na
+              qualidade de vida, aspectos psicológicos no envalhecimento, entre outros. Essas discussões ampliaram a
+              compreensão sobre como o contexto social impacta diretamente o desenvolvimento humano, reforçando a
+              importância de uma visão integral e contextualizada do indivíduo. Além disso, foram realizadas atividades
+              baseadas em debates e análises de documentários, como “Você é o que você come”, que contribuíram para a
+              reflexão sobre hábitos de vida e suas consequências ao longo do tempo.
             </p>
             <p className="mt-4 text-justify text-sm leading-relaxed text-white/70 md:text-base">
-              Os objetivos de aprendizagem deste portfólio envolvem compreender os principais conceitos das
-              disciplinas, relacioná-los com situações práticas e desenvolver postura crítica e reflexiva. A
-              organização foi construída a partir da seleção de conteúdos e experiências significativas, com registros
-              reflexivos e revisão dos materiais trabalhados ao longo do semestre, buscando coerência, clareza e
-              profundidade na apresentação dos aprendizados.
+              Os objetivos de aprendizagem deste portfólio envolvem a capacidade de compreender os principais conceitos
+              das disciplinas, relacioná-los com situações práticas e desenvolver uma postura crítica e reflexiva
+              diante dos conteúdos estudados. Ao longo do semestre, foi possível perceber um avanço significativo no
+              desenvolvimento acadêmico, especialmente na habilidade de articular teoria e prática, participar das
+              discussões em sala e construir reflexões mais profundas sobre os temas abordados e sobre vida pessoal. Os
+              produtos de aprendizagem aqui apresentados refletem não apenas a compreensão teórica, mas também a
+              vivência prática proporcionada por metodologias ativas, como dinâmicas em grupo, debates, análises de
+              filmes e atividades reflexivas. Entre os principais aprendizados, destacam-se a importância do
+              autoconhecimento, da construção de relações positivas, da promoção do bem-estar ao longo da vida e da
+              compreensão das diferentes fases do desenvolvimento humano em suas múltiplas dimensões.
+            </p>
+            <p className="mt-4 text-justify text-sm leading-relaxed text-white/70 md:text-base">
+              A organização deste portfólio foi realizada a partir da seleção de conteúdos, atividades e experiências
+              que tiveram maior significado pessoal e acadêmico. Foram utilizadas estratégias como anotações de aula,
+              registros reflexivos, organização cronológica dos materiais e revisão dos conteúdos trabalhados, visando
+              garantir coerência, clareza e profundidade na apresentação. Por fim, ressalta-se que os trabalhos aqui
+              reunidos foram desenvolvidos durante o quinto semestre do curso, refletindo um processo contínuo de
+              construção do conhecimento, mediado por aulas expositivas, práticas colaborativas e experiências
+              significativas em sala de aula.
             </p>
           </article>
         </div>
