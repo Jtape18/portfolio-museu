@@ -10,27 +10,39 @@ function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   }, [pathname])
 
   return null
 }
 
-function App() {
+function AppContent() {
+  const { pathname } = useLocation()
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <div className="min-h-screen bg-[#090b10]">
         <Header />
         <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/disciplina/:disciplineId" element={<DisciplinePage />} />
-            <Route path="/disciplina/:disciplineId/atividade/:activityId" element={<ActivityPage />} />
-          </Routes>
+          <div key={pathname} className="page-enter">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/disciplina/:disciplineId" element={<DisciplinePage />} />
+              <Route path="/disciplina/:disciplineId/atividade/:activityId" element={<ActivityPage />} />
+            </Routes>
+          </div>
         </main>
         <Footer />
       </div>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   )
 }

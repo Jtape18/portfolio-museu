@@ -24,8 +24,8 @@ export default function DisciplinePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black/70" />
 
         <div className="absolute right-0 bottom-0 left-0 px-8 pb-10 md:px-20 md:pb-14">
-          <p className="text-sm font-semibold tracking-[0.15em] text-white/90 uppercase">Disciplina</p>
-          <h1 className="mt-2 text-5xl leading-tight font-bold text-white uppercase sm:text-7xl md:text-8xl lg:text-[6rem]">
+          <p className="hero-reveal text-sm font-semibold tracking-[0.15em] text-white/90 uppercase">Disciplina</p>
+          <h1 className="hero-reveal hero-reveal-delay-1 mt-2 text-5xl leading-tight font-bold text-white uppercase sm:text-7xl md:text-8xl lg:text-[6rem]">
             {discipline.title}
           </h1>
         </div>
@@ -34,7 +34,7 @@ export default function DisciplinePage() {
       <FadeInSection className="bg-[#090b10] py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-8 md:px-20">
           <div className="mb-6 flex max-w-5xl items-center justify-between gap-4">
-            <Link to="/" className="text-sm font-semibold text-[#ef8354] transition-colors hover:text-[#f29a74]">
+            <Link to="/" className="rounded-sm text-sm font-semibold text-[#ef8354] transition-colors duration-300 hover:text-[#f29a74] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]">
               ← Voltar para home
             </Link>
           </div>
@@ -55,7 +55,7 @@ export default function DisciplinePage() {
           ))}
         </div>
         <div className="mx-auto mt-10 flex max-w-6xl flex-wrap items-center justify-between gap-4 px-8 md:px-20">
-          <Link to="/" className="text-sm font-semibold text-[#ef8354] transition-colors hover:text-[#f29a74]">
+          <Link to="/" className="rounded-sm text-sm font-semibold text-[#ef8354] transition-colors duration-300 hover:text-[#f29a74] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]">
             ← Voltar para home
           </Link>
           <BackToTopButton />

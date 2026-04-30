@@ -1,5 +1,61 @@
 @import "tailwindcss";
 
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentlePulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.page-enter {
+  animation: pageEnter 300ms ease-out both;
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: heroReveal 700ms ease-out both;
+}
+
+.hero-reveal-delay-1 {
+  animation-delay: 120ms;
+}
+
+.hero-reveal-delay-2 {
+  animation-delay: 220ms;
+}
+
+.cta-pulse-on-view {
+  animation: gentlePulse 1400ms ease-in-out 2;
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -17,5 +73,15 @@
   h3 {
     font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 800;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .hero-reveal,
+  .cta-pulse-on-view {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

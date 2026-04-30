@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 interface NavItem {
   label: string
@@ -33,11 +33,16 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur-sm">
       <div className="flex h-16 items-center justify-between px-6 md:px-14">
-        <Link to="/" className="inline-flex items-center gap-2.5">
+        <Link to="/" className="inline-flex items-center gap-2.5 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
           <img
             src="/icon-site.png"
             alt="Ícone do portfólio"
@@ -51,7 +56,7 @@ export default function Header() {
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm font-medium tracking-wide text-white/80 transition-colors hover:text-white"
+              className="rounded-sm text-sm font-medium tracking-wide text-white/80 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               {item.label}
             </Link>
@@ -60,7 +65,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="p-2 text-white md:hidden"
+          className="rounded-sm p-2 text-white transition-colors duration-300 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black md:hidden"
           onClick={() => setMenuOpen((open) => !open)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -69,20 +74,24 @@ export default function Header() {
         </button>
       </div>
 
-      {menuOpen && (
-        <nav className="flex flex-col gap-4 border-t border-white/10 bg-black/95 px-6 py-4 md:hidden">
+      <nav
+        className={`overflow-hidden border-t border-white/10 bg-black/95 px-6 transition-all duration-300 ease-out md:hidden ${
+          menuOpen ? 'max-h-64 py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
+        }`}
+      >
+        <div className="flex flex-col gap-4">
           {navItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               onClick={() => setMenuOpen(false)}
-              className="py-1 text-sm font-medium tracking-wide text-white/80 transition-colors hover:text-white"
+              className="rounded-sm py-1 text-sm font-medium tracking-wide text-white/80 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               {item.label}
             </Link>
           ))}
-        </nav>
-      )}
+        </div>
+      </nav>
     </header>
   )
 }

@@ -15,10 +15,10 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black/70" />
 
         <div className="absolute right-0 bottom-0 left-0 px-8 pb-10 md:px-20 md:pb-14">
-          <h1 className="text-5xl leading-tight font-bold text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] sm:text-7xl md:text-8xl lg:text-[6rem]">
+          <h1 className="hero-reveal text-5xl leading-tight font-bold text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] sm:text-7xl md:text-8xl lg:text-[6rem]">
             Portfólio
           </h1>
-          <p className="mt-2 max-w-3xl text-base font-normal text-white drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] md:text-lg">
+          <p className="hero-reveal hero-reveal-delay-1 mt-2 max-w-3xl text-base font-normal text-white drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] md:text-lg">
             Apresentação reflexiva das disciplinas Fases da Vida III e Psicologia Positiva sob perspectiva de Marcela
             Cristinne Camarinha Gonçalves. <br />
             Centro Universitário do Estado do Pará.
@@ -102,16 +102,16 @@ export default function HomePage() {
           <Link
             key={discipline.id}
             to={`/disciplina/${discipline.id}`}
-            className="group relative min-h-[520px] overflow-hidden md:min-h-[700px] lg:min-h-[900px]"
+            className="group relative min-h-[520px] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/85 focus-visible:ring-offset-2 focus-visible:ring-offset-black md:min-h-[700px] lg:min-h-[900px]"
           >
             <img
               src={discipline.coverImage}
               alt={discipline.title}
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 group-focus-visible:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/75" />
             <div className="absolute right-0 bottom-0 left-0 px-8 pb-10 md:pb-12">
-              <h2 className="relative block w-fit origin-left text-2xl font-bold tracking-wide text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] transition-transform duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-white/90 after:transition-all after:duration-300 after:content-[''] group-hover:scale-105 group-hover:after:w-full group-active:scale-105 group-active:after:w-full">
+              <h2 className="relative block w-fit origin-left text-2xl font-bold tracking-wide text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] transition-transform duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-white/90 after:transition-all after:duration-300 after:content-[''] group-hover:scale-105 group-hover:after:w-full group-active:scale-105 group-active:after:w-full group-focus-visible:scale-105 group-focus-visible:after:w-full">
                 {discipline.title}
               </h2>
               <span className="mt-4 block text-sm font-semibold text-white/95">Ver atividades</span>
