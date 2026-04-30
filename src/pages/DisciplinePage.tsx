@@ -34,7 +34,7 @@ export default function DisciplinePage() {
       <FadeInSection className="bg-[#090b10] py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-8 md:px-20">
           <div className="mb-6 flex max-w-5xl items-center justify-between gap-4">
-            <Link to="/" className="rounded-sm text-sm font-semibold text-[#ef8354] transition-colors duration-300 hover:text-[#f29a74] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]">
+            <Link to="/" className="btn-ui btn-ui-soft focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]">
               ← Voltar para home
             </Link>
           </div>
@@ -55,7 +55,7 @@ export default function DisciplinePage() {
           ))}
         </div>
         <div className="mx-auto mt-10 flex max-w-6xl flex-wrap items-center justify-between gap-4 px-8 md:px-20">
-          <Link to="/" className="rounded-sm text-sm font-semibold text-[#ef8354] transition-colors duration-300 hover:text-[#f29a74] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]">
+          <Link to="/" className="btn-ui btn-ui-soft focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]">
             ← Voltar para home
           </Link>
           <BackToTopButton />

@@ -2,6 +2,9 @@ export interface PortfolioActivity {
   id: string
   title: string
   image: string
+  contentImage?: string
+  contentImages?: string[]
+  contentImageAlt?: string
   description: string
 }
 

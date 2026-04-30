@@ -7,7 +7,7 @@ export default function BackToTopButton() {
     <button
       type="button"
       onClick={handleBackToTop}
-      className="inline-flex items-center rounded-sm border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold tracking-wide text-white/85 uppercase transition-colors hover:bg-white/10 hover:text-white"
+      className="btn-ui btn-ui-neutral text-xs tracking-wide uppercase"
     >
       Voltar ao topo
     </button>

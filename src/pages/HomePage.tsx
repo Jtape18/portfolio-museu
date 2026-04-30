@@ -1,18 +1,57 @@
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import BackToTopButton from '../components/ui/BackToTopButton'
 import FadeInSection from '../components/ui/FadeInSection'
 import { portfolioDisciplines } from '../features/portfolio/data'
 
+const heroImages = [
+  '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.55.58.jpeg',
+  '/fotos-marcela/fotos-conteudo/WhatsApp Image 2026-04-29 at 14.48.00.jpeg',
+  '/fotos-marcela/fotos-conteudo/WhatsApp Image 2026-04-29 at 14.48.10.jpeg',
+  '/fotos-marcela/fotos-conteudo/WhatsApp Image 2026-04-29 at 14.48.21.jpeg',
+  '/fotos-marcela/fotos-conteudo/WhatsApp Image 2026-04-29 at 14.48.29.jpeg',
+  '/fotos-marcela/fotos-conteudo/WhatsApp Image 2026-04-29 at 14.50.12.jpeg',
+  '/fotos-marcela/fotos-conteudo/WhatsApp Image 2026-04-29 at 14.50.21.jpeg',
+  '/fotos-marcela/fotos-conteudo/WhatsApp Image 2026-04-29 at 14.50.29.jpeg'
+]
+
 export default function HomePage() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    if (pathname === '/') {
+      setActiveImageIndex(0)
+    }
+  }, [pathname])
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveImageIndex((current) => (current + 1) % heroImages.length)
+    }, 4800)
+
+    return () => window.clearInterval(intervalId)
+  }, [])
+
+  const handleSelectImage = (index: number) => {
+    setActiveImageIndex(index)
+  }
+
   return (
     <div className="min-h-screen bg-[#090b10]">
       <section className="relative min-h-[80vh] w-full overflow-hidden md:min-h-screen">
-        <img
-          src="/fotos-marcela/WhatsApp Image 2026-04-24 at 16.55.58.jpeg"
-          alt="Museu"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black/70" />
+        {heroImages.map((imageSrc, index) => (
+          <img
+            key={imageSrc}
+            src={imageSrc}
+            alt="Galeria de memórias do portfólio"
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1600ms] ease-out ${
+              index === activeImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/15 to-black/75" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),rgba(0,0,0,0.35)_58%,rgba(0,0,0,0.65)_100%)]" />
 
         <div className="absolute right-0 bottom-0 left-0 px-8 pb-10 md:px-20 md:pb-14">
           <h1 className="hero-reveal text-5xl leading-tight font-bold text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] sm:text-7xl md:text-8xl lg:text-[6rem]">
@@ -23,6 +62,21 @@ export default function HomePage() {
             Cristinne Camarinha Gonçalves. <br />
             Centro Universitário do Estado do Pará.
           </p>
+
+          <div className="mt-5 flex items-center gap-2">
+            {heroImages.map((imageSrc, index) => (
+              <button
+                key={`hero-dot-${imageSrc}`}
+                type="button"
+                aria-label={`Ir para imagem ${index + 1}`}
+                aria-current={index === activeImageIndex}
+                onClick={() => handleSelectImage(index)}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  index === activeImageIndex ? 'w-8 bg-[#ef8354]' : 'w-2.5 bg-white/45 hover:bg-white/75'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import BackToTopButton from '../components/ui/BackToTopButton'
 import FadeInSection from '../components/ui/FadeInSection'
@@ -7,10 +8,20 @@ import { portfolioDisciplines } from '../features/portfolio/data'
 export default function ActivityPage() {
   const { disciplineId, activityId } = useParams()
   const [readingProgress, setReadingProgress] = useState(0)
+  const [activeContentImageIndex, setActiveContentImageIndex] = useState(0)
+  const [zoomedImageIndex, setZoomedImageIndex] = useState<number | null>(null)
   const discipline = portfolioDisciplines.find((item) => item.id === disciplineId)
   const activity = discipline?.activities.find((item) => item.id === activityId)
   const activityIndex = discipline?.activities.findIndex((item) => item.id === activityId) ?? -1
   const nextActivity = activityIndex >= 0 ? discipline?.activities[activityIndex + 1] : undefined
+  const contentImages = activity?.contentImages ?? (activity?.contentImage ? [activity.contentImage] : [])
+  const hasMultipleContentImages = contentImages.length > 1
+  const activeContentImage = contentImages[activeContentImageIndex] ?? contentImages[0]
+  const zoomedImageSrc = zoomedImageIndex !== null ? contentImages[zoomedImageIndex] : null
+  const zoomedImageAlt =
+    zoomedImageIndex !== null
+      ? activity?.contentImageAlt ?? `${activity?.title} - imagem ${zoomedImageIndex + 1}`
+      : ''
 
   useEffect(() => {
     const updateReadingProgress = () => {
@@ -31,6 +42,66 @@ export default function ActivityPage() {
 
     return () => window.removeEventListener('scroll', updateReadingProgress)
   }, [])
+
+  useEffect(() => {
+    setActiveContentImageIndex(0)
+  }, [activityId])
+
+  useEffect(() => {
+    if (zoomedImageIndex === null) {
+      return
+    }
+
+    const handleEscToClose = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setZoomedImageIndex(null)
+      }
+
+      if (!hasMultipleContentImages) {
+        return
+      }
+
+      if (event.key === 'ArrowRight') {
+        setZoomedImageIndex((current) => {
+          if (current === null) {
+            return 0
+          }
+
+          return (current + 1) % contentImages.length
+        })
+      }
+
+      if (event.key === 'ArrowLeft') {
+        setZoomedImageIndex((current) => {
+          if (current === null) {
+            return 0
+          }
+
+          return (current - 1 + contentImages.length) % contentImages.length
+        })
+      }
+    }
+
+    window.addEventListener('keydown', handleEscToClose)
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      window.removeEventListener('keydown', handleEscToClose)
+      document.body.style.overflow = ''
+    }
+  }, [zoomedImageIndex, hasMultipleContentImages, contentImages.length])
+
+  useEffect(() => {
+    if (contentImages.length <= 1) {
+      return
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveContentImageIndex((currentIndex) => (currentIndex + 1) % contentImages.length)
+    }, 4200)
+
+    return () => window.clearInterval(intervalId)
+  }, [activityId, contentImages.length])
 
   if (!discipline || !activity) {
     return <Navigate to="/" replace />
@@ -59,43 +130,104 @@ export default function ActivityPage() {
 
       <FadeInSection className="bg-[#090b10] py-10 md:py-14">
         <div className="mx-auto w-full max-w-6xl px-8 md:px-20">
-          <div className="mb-8 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold">
-            <div className="flex flex-wrap items-center gap-5">
+          <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
               <Link
                 to={`/disciplina/${discipline.id}`}
-                className="rounded-sm text-[#ef8354] transition-colors duration-300 hover:text-[#f29a74] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
+                className="btn-ui btn-ui-soft focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
               >
                 ← Voltar para {discipline.title}
               </Link>
-              <Link to="/" className="rounded-sm text-white/70 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]">
+              <Link
+                to="/"
+                className="btn-ui btn-ui-neutral focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
+              >
                 Ir para home
               </Link>
             </div>
           </div>
 
-          <article className="max-w-5xl rounded-sm border border-white/10 bg-[#0f141e] p-6 md:p-10">
-            <h2 className="text-2xl font-bold text-white md:text-3xl">Reflexão da atividade</h2>
-            <p className="mt-4 text-sm leading-relaxed whitespace-pre-line text-white/85 md:text-lg">{activity.description}</p>
-          </article>
+          <section
+            className={`grid gap-8 lg:items-start ${
+              contentImages.length > 0 ? 'lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]' : 'lg:grid-cols-1'
+            }`}
+          >
+            <article className={`rounded-2xl border border-white/10 bg-[#0f141e] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] md:p-10 ${contentImages.length === 0 ? 'lg:max-w-5xl' : ''}`}>
+              <p className="text-sm leading-relaxed whitespace-pre-line text-white/85 md:text-lg">{activity.description}</p>
+            </article>
 
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold">
+            {contentImages.length > 0 && (
+              <div className="grid gap-4 lg:sticky lg:top-24">
+                <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#0f141e] p-2 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setZoomedImageIndex(activeContentImageIndex)
+                    }}
+                    className="w-full cursor-zoom-in"
+                    aria-label="Ampliar imagem"
+                  >
+                    <img
+                      key={activeContentImage}
+                      src={activeContentImage}
+                      alt={
+                        activity.contentImageAlt ??
+                        `${activity.title} - imagem ${activeContentImageIndex + 1}`
+                      }
+                      className="content-image-fade h-full w-full rounded-xl border border-white/10 object-cover"
+                      loading="lazy"
+                    />
+                  </button>
+                  <figcaption className="px-3 pt-3 pb-1 text-xs text-white/60">Registro visual da atividade.</figcaption>
+                </figure>
+
+                {hasMultipleContentImages && (
+                  <div className="grid grid-cols-3 gap-2">
+                    {contentImages.map((image, index) => (
+                      <button
+                        key={image}
+                        type="button"
+                        onClick={() => setActiveContentImageIndex(index)}
+                        aria-label={`Ver imagem ${index + 1}`}
+                        aria-current={index === activeContentImageIndex}
+                        className={`overflow-hidden rounded-xl border transition-all duration-300 ${
+                          index === activeContentImageIndex
+                            ? 'border-[#ef8354] ring-2 ring-[#ef8354]/60'
+                            : 'border-white/10 hover:border-white/30'
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`${activity.title} - miniatura ${index + 1}`}
+                          className="h-20 w-full object-cover md:h-24"
+                          loading="lazy"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </section>
+
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold">
             <Link
               to={`/disciplina/${discipline.id}`}
-              className="rounded-sm text-[#ef8354] transition-colors duration-300 hover:text-[#f29a74] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
+              className="btn-ui btn-ui-soft focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
             >
               ← Voltar para {discipline.title}
             </Link>
             {nextActivity ? (
               <Link
                 to={`/disciplina/${discipline.id}/atividade/${nextActivity.id}`}
-                className="cta-pulse-on-view rounded-sm bg-[#d4562f] px-4 py-2 text-white transition-colors duration-300 hover:bg-[#b8411f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
+                className="btn-ui btn-ui-primary cta-pulse-on-view focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
               >
                 Próxima atividade →
               </Link>
             ) : (
               <Link
                 to={`/disciplina/${discipline.id}`}
-                className="rounded-sm border border-white/25 px-4 py-2 text-white/85 transition-colors duration-300 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
+                className="btn-ui btn-ui-neutral focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
               >
                 Voltar para início da disciplina
               </Link>
@@ -106,6 +238,71 @@ export default function ActivityPage() {
           </div>
         </div>
       </FadeInSection>
+
+      {zoomedImageSrc &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/85 p-4 backdrop-blur-[2px]"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Imagem ampliada"
+            onClick={() => setZoomedImageIndex(null)}
+          >
+            <button
+              type="button"
+              className="absolute top-4 right-4 rounded-full border border-white/25 bg-black/40 px-3 py-1 text-xs font-semibold text-white/90 transition-colors hover:bg-black/70"
+              onClick={() => setZoomedImageIndex(null)}
+            >
+              Fechar
+            </button>
+            {hasMultipleContentImages && (
+              <>
+                <button
+                  type="button"
+                  aria-label="Imagem anterior"
+                  className="absolute left-4 rounded-full border border-white/20 bg-black/45 p-3 text-xl text-white transition-colors hover:bg-black/70 md:left-8"
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    setZoomedImageIndex((current) => {
+                      if (current === null) {
+                        return 0
+                      }
+
+                      return (current - 1 + contentImages.length) % contentImages.length
+                    })
+                  }}
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  aria-label="Próxima imagem"
+                  className="absolute right-4 rounded-full border border-white/20 bg-black/45 p-3 text-xl text-white transition-colors hover:bg-black/70 md:right-8"
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    setZoomedImageIndex((current) => {
+                      if (current === null) {
+                        return 0
+                      }
+
+                      return (current + 1) % contentImages.length
+                    })
+                  }}
+                >
+                  ›
+                </button>
+              </>
+            )}
+            <img
+              key={zoomedImageSrc}
+              src={zoomedImageSrc}
+              alt={zoomedImageAlt}
+              className="zoom-image-enter max-h-[90vh] max-w-[95vw] rounded-xl border border-white/20 object-contain shadow-[0_20px_100px_rgba(0,0,0,0.6)]"
+              onClick={(event) => event.stopPropagation()}
+            />
+          </div>,
+          document.body
+        )}
     </div>
   )
 }
