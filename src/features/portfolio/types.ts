@@ -5,6 +5,8 @@ export interface PortfolioActivity {
   contentImage?: string
   contentImages?: string[]
   contentImageAlt?: string
+  /** Texto exibido abaixo da imagem de conteúdo (ex.: citação). */
+  contentImageQuote?: string
   description: string
 }
 

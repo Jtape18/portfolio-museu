@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { AUTOAVALIACAO_ROUTE } from '../../features/portfolio/data/autoavaliacao'
 
 interface NavItem {
   label: string
@@ -9,7 +10,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: 'Home', to: '/' },
   { label: 'Psicologia Positiva', to: '/disciplina/psicologia-positiva' },
-  { label: 'Fases da Vida III', to: '/disciplina/fases-da-vida-iii' }
+  { label: 'Fases da Vida III', to: '/disciplina/fases-da-vida-iii' },
+  { label: 'Autoavaliação', to: AUTOAVALIACAO_ROUTE }
 ]
 
 function MenuIcon({ open }: { open: boolean }) {

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { AUTOAVALIACAO_ROUTE } from '../../features/portfolio/data/autoavaliacao'
 
 interface FooterLink {
   label: string
@@ -9,7 +10,7 @@ const footerLinks: Record<string, FooterLink[]> = {
   Estrutura: [
     { label: 'Apresentação', to: '/' },
     { label: 'Produtos de aprendizagem', to: '/' },
-    { label: 'Autoavaliação', to: '/' },
+    { label: 'Autoavaliação', to: AUTOAVALIACAO_ROUTE },
     { label: 'Objetivos futuros', to: '/' }
   ],
   Disciplinas: [

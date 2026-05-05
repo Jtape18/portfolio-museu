@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import BackToTopButton from '../components/ui/BackToTopButton'
 import FadeInSection from '../components/ui/FadeInSection'
+import { AUTOAVALIACAO_ROUTE, autoavaliacaoSection } from '../features/portfolio/data/autoavaliacao'
 import { portfolioDisciplines } from '../features/portfolio/data'
 
 const heroImages = [
@@ -172,6 +173,27 @@ export default function HomePage() {
             </div>
           </Link>
         ))}
+        <Link
+          to={AUTOAVALIACAO_ROUTE}
+          className="group relative min-h-[420px] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/85 focus-visible:ring-offset-2 focus-visible:ring-offset-black md:col-span-2 md:min-h-[560px] lg:min-h-[640px]"
+        >
+          <img
+            src={autoavaliacaoSection.coverImage}
+            alt={autoavaliacaoSection.titleLines.join(' ')}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 group-focus-visible:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/75" />
+          <div className="absolute right-0 bottom-0 left-0 px-8 pb-10 md:pb-12">
+            <h2 className="relative block w-fit max-w-4xl origin-left text-2xl font-bold tracking-wide text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] transition-transform duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-white/90 after:transition-all after:duration-300 after:content-[''] group-hover:scale-105 group-hover:after:w-full group-active:scale-105 group-active:after:w-full group-focus-visible:scale-105 group-focus-visible:after:w-full md:text-3xl">
+              {autoavaliacaoSection.titleLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </h2>
+            <span className="mt-4 block text-sm font-semibold text-white/95">Ler texto completo</span>
+          </div>
+        </Link>
       </FadeInSection>
       <FadeInSection className="bg-[#090b10] px-8 py-10 md:px-20">
         <div className="text-right">

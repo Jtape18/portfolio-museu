@@ -1,9 +1,40 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import BackToTopButton from '../components/ui/BackToTopButton'
 import FadeInSection from '../components/ui/FadeInSection'
 import { portfolioDisciplines } from '../features/portfolio/data'
+
+function ContentImageQuoteCaption({ text }: { text: string }) {
+  const sep = '\n— '
+  const i = text.lastIndexOf(sep)
+
+  if (i === -1) {
+    return (
+      <p
+        className="text-[0.9375rem] leading-relaxed text-white/[0.88] text-pretty hyphens-auto font-normal tracking-normal antialiased"
+        lang="pt-BR"
+      >
+        {text}
+      </p>
+    )
+  }
+
+  const quoteBody = text.slice(0, i).replace(/\s+/g, ' ').trim()
+
+  return (
+    <blockquote className="m-0 border-l-[3px] border-[#ef8354]/35 pl-4">
+      <p
+        className="text-[0.9375rem] leading-[1.65] text-white/[0.9] text-pretty hyphens-auto font-normal tracking-normal antialiased md:text-base"
+        lang="pt-BR"
+      >
+        {quoteBody}
+      </p>
+      <cite className="mt-3 block text-[0.8125rem] leading-snug font-semibold text-white/55 not-italic">
+        — {text.slice(i + sep.length)}
+      </cite>
+    </blockquote>
+  )
+}
 
 export default function ActivityPage() {
   const { disciplineId, activityId } = useParams()
@@ -13,6 +44,7 @@ export default function ActivityPage() {
   const discipline = portfolioDisciplines.find((item) => item.id === disciplineId)
   const activity = discipline?.activities.find((item) => item.id === activityId)
   const activityIndex = discipline?.activities.findIndex((item) => item.id === activityId) ?? -1
+  const prevActivity = activityIndex > 0 ? discipline?.activities[activityIndex - 1] : undefined
   const nextActivity = activityIndex >= 0 ? discipline?.activities[activityIndex + 1] : undefined
   const contentImages = activity?.contentImages ?? (activity?.contentImage ? [activity.contentImage] : [])
   const hasMultipleContentImages = contentImages.length > 1
@@ -153,6 +185,9 @@ export default function ActivityPage() {
             }`}
           >
             <article className={`rounded-2xl border border-white/10 bg-[#0f141e] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] md:p-10 ${contentImages.length === 0 ? 'lg:max-w-5xl' : ''}`}>
+              <h2 className="mb-5 border-b border-white/10 pb-3 text-xs font-semibold tracking-[0.18em] text-[#ef8354] uppercase">
+                Reflexão sobre a atividade
+              </h2>
               <p className="text-sm leading-relaxed whitespace-pre-line text-white/85 md:text-lg">{activity.description}</p>
             </article>
 
@@ -178,7 +213,15 @@ export default function ActivityPage() {
                       loading="lazy"
                     />
                   </button>
-                  <figcaption className="px-3 pt-3 pb-1 text-xs text-white/60">Registro visual da atividade.</figcaption>
+                  <figcaption
+                    className={`px-3 pt-3 pb-3 ${activity.contentImageQuote ? 'text-left' : 'text-xs text-white/60'}`}
+                  >
+                    {activity.contentImageQuote ? (
+                      <ContentImageQuoteCaption text={activity.contentImageQuote} />
+                    ) : (
+                      'Registro visual da atividade.'
+                    )}
+                  </figcaption>
                 </figure>
 
                 {hasMultipleContentImages && (
@@ -210,13 +253,23 @@ export default function ActivityPage() {
             )}
           </section>
 
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold">
-            <Link
-              to={`/disciplina/${discipline.id}`}
-              className="btn-ui btn-ui-soft focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
-            >
-              ← Voltar para {discipline.title}
-            </Link>
+          <div
+            className={`mt-10 flex flex-wrap items-center gap-4 text-sm font-semibold ${
+              prevActivity && nextActivity
+                ? 'justify-between'
+                : prevActivity
+                  ? 'justify-start'
+                  : 'justify-end'
+            }`}
+          >
+            {prevActivity ? (
+              <Link
+                to={`/disciplina/${discipline.id}/atividade/${prevActivity.id}`}
+                className="btn-ui btn-ui-soft focus-visible:ring-2 focus-visible:ring-[#ef8354] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
+              >
+                ← Atividade anterior
+              </Link>
+            ) : null}
             {nextActivity ? (
               <Link
                 to={`/disciplina/${discipline.id}/atividade/${nextActivity.id}`}
@@ -224,17 +277,7 @@ export default function ActivityPage() {
               >
                 Próxima atividade →
               </Link>
-            ) : (
-              <Link
-                to={`/disciplina/${discipline.id}`}
-                className="btn-ui btn-ui-neutral focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b10]"
-              >
-                Voltar para início da disciplina
-              </Link>
-            )}
-          </div>
-          <div className="mt-6 text-right">
-            <BackToTopButton />
+            ) : null}
           </div>
         </div>
       </FadeInSection>

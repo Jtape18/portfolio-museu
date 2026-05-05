@@ -2,7 +2,9 @@ import { useEffect } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Footer from './components/museum/Footer'
 import Header from './components/museum/Header'
+import { AUTOAVALIACAO_ROUTE } from './features/portfolio/data/autoavaliacao'
 import ActivityPage from './pages/ActivityPage'
+import AutoavaliacaoPage from './pages/AutoavaliacaoPage'
 import DisciplinePage from './pages/DisciplinePage'
 import HomePage from './pages/HomePage'
 
@@ -30,6 +32,7 @@ function AppContent() {
               <Route path="/" element={<HomePage />} />
               <Route path="/disciplina/:disciplineId" element={<DisciplinePage />} />
               <Route path="/disciplina/:disciplineId/atividade/:activityId" element={<ActivityPage />} />
+              <Route path={AUTOAVALIACAO_ROUTE} element={<AutoavaliacaoPage />} />
             </Routes>
           </div>
         </main>

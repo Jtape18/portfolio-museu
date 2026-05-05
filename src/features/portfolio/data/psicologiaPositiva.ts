@@ -23,6 +23,8 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
       contentImage:
         '/fotos-marcela/atividades/psicologia-positiva/reportagem/filme/WhatsApp Image 2026-04-30 at 12.16.27.jpeg',
       contentImageAlt: 'Registro da atividade de análise do filme Soul',
+      contentImageQuote:
+        '“A vida é cheia de possibilidades. Você só precisa saber onde procurar. Não perca as alegrias da vida.”\n— Soul, 2020',
       description:
         'A análise do filme "Soul" foi outro momento significativo, mas descontraído, pois trouxe reflexões sobre o sentido da vida e a valorização das pequenas experiências por meio de uma animação. Nessa atividade, tivemos como objetivo analisar as vivências do personagem Joe e da 22, relacionando-as com a teoria do Bem-Estar Subjetivo e com os conceitos de fluxo e Flow.\n\nApós assistir ao filme, eu e meu grupo discutimos temas como propósito, felicidade e realização pessoal enquanto construíamos o trabalho escrito. O que mais me marcou foi perceber que a vida não precisa necessariamente de um grande objetivo para ter valor, pois o sentido pode estar nas vivências simples do dia a dia.\n\nRelacionei essa ideia com conceitos da Psicologia Positiva, como mindfulness, gratidão e engajamento. A troca de ideias com as minhas colegas foi muito importante, pois me permitiu enxergar diferentes interpretações sobre o filme. Essa atividade contribuiu para que eu desenvolvesse uma visão mais leve e realista sobre o que significa viver bem.'
     },
