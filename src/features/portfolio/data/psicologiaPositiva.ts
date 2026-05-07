@@ -11,7 +11,7 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
       title: 'Atividade - Ikigai',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.29.49 (4).jpeg',
       contentImage:
-        '/fotos-marcela/atividades/psicologia-positiva/reportagem/ikigai/WhatsApp Image 2026-04-30 at 12.14.09.jpeg',
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/ikigai/ikigai.jpeg',
       contentImageAlt: 'Registro da atividade de construção do Ikigai',
       description:
         'A atividade de construção do Ikigai foi uma das experiências mais marcantes para mim ao longo da disciplina, pois me proporcionou um momento de reflexão sobre o meu propósito de vida. A proposta consistia em identificar, a partir de quatro dimensões - o que eu amo, no que sou bom, o que o mundo precisa e pelo que posso ser recompensado - possíveis caminhos que dão sentido à minha existência.\n\nDurante a realização da atividade, percebi como essas áreas se interligam e como o desalinhamento entre elas pode gerar insatisfação pessoal. Do ponto de vista teórico, consegui relacionar essa vivência com o conceito de sentido de vida presente na Psicologia Positiva, especialmente dentro do modelo PERMA. Essa experiência favoreceu muito o meu autoconhecimento, pois compreendi que o propósito não é algo fixo, mas construído ao longo da vida.\n\nNa construção do meu Ikigai, reuni alguns hobbies e qualidades e, após finalizar a escrita nas interseções, pude resumir meu propósito de vida em: "transformar criatividade, arte e conhecimento em experiências e produtos que inspirem pessoas".'
@@ -21,7 +21,7 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
       title: 'Atividade - Filme Soul',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.29.49.jpeg',
       contentImage:
-        '/fotos-marcela/atividades/psicologia-positiva/reportagem/filme/WhatsApp Image 2026-04-30 at 12.16.27.jpeg',
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/filme/filmesoul.jpeg',
       contentImageAlt: 'Registro da atividade de análise do filme Soul',
       contentImageQuote:
         '“A vida é cheia de possibilidades. Você só precisa saber onde procurar. Não perca as alegrias da vida.”\n— Soul, 2020',
@@ -33,7 +33,7 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
       title: 'Atividade - Reportagem',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.29.49 (3).jpeg',
       contentImage:
-        '/fotos-marcela/atividades/psicologia-positiva/reportagem/reportagem/WhatsApp Image 2026-04-30 at 12.17.09.jpeg',
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/reportagem/reportagem.jpeg',
       contentImageAlt: 'Registro da atividade de reescrita da reportagem',
       description:
         'A atividade da reportagem sobre um incêndio em uma padaria de uma comunidade foi desafiadora e, ao mesmo tempo, muito enriquecedora. Inicialmente, a notícia apresentava o fato de forma tradicional, com foco na tragédia. A proposta era reescrevê-la sob a perspectiva da Psicologia Positiva, destacando aspectos como resiliência, solidariedade e apoio social.\n\nDurante essa atividade, percebi como a forma de narrar um acontecimento pode influenciar a maneira como ele é compreendido. Eu e meu grupo conseguimos relacionar essa experiência com conceitos como crescimento pós-traumático e a valorização das emoções positivas, mesmo em situações adversas.\n\nEssa atividade me fez refletir sobre o papel da Psicologia Positiva na construção de narrativas mais humanizadas e na valorização das potencialidades humanas, mesmo diante de dificuldades.'
@@ -43,9 +43,9 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
       title: 'Aula sobre Modelo PERMA',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.55.57.jpeg',
       contentImages: [
-        '/fotos-marcela/atividades/psicologia-positiva/reportagem/modelo-perma/WhatsApp Image 2026-04-30 at 12.18.32.jpeg',
-        '/fotos-marcela/atividades/psicologia-positiva/reportagem/modelo-perma/WhatsApp Image 2026-04-30 at 12.18.33.jpeg',
-        '/fotos-marcela/atividades/psicologia-positiva/reportagem/modelo-perma/WhatsApp Image 2026-04-30 at 12.18.33 (1).jpeg'
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/modelo-perma/modelo perma 1.jpeg',
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/modelo-perma/modelo perma 2.jpeg',
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/modelo-perma/modelo perma 3.jpeg'
       ],
       contentImageAlt: 'Registros da atividade sobre o modelo PERMA',
       description:
@@ -55,6 +55,10 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
       id: 'circulo-apoio',
       title: 'Relacionamentos Positivos + Círculo de Apoio',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.55.58 (1).JPG',
+      contentImage:
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/relacionamentopositivo/relacionamentos positivos.jpeg',
+      contentImageAlt:
+        'Registro em sala da atividade sobre relacionamentos positivos, com citação sobre o amor e os relacionamentos humanos (Snyder) exibida no telão',
       description:
         'A atividade teve como foco os relacionamentos positivos e incluiu a dinâmica do Círculo de Apoio, na qual foi possível identificar pessoas significativas na rede de suporte social. Segundo Martin Seligman, os relacionamentos são um dos pilares do bem-estar. A reflexão proporcionada pela atividade destacou a importância das conexões interpessoais ao longo da vida adulta e na velhice. Foi possível perceber que o apoio social contribui para a saúde emocional e enfrentamento de dificuldades. Na prática, isso se evidencia em indivíduos que mantêm vínculos afetivos sólidos, apresentando maior resiliência e satisfação com a vida.'
     }

@@ -89,64 +89,76 @@ export default function HomePage() {
 
           <article className="mx-auto w-full max-w-5xl">
             <p className="text-justify text-sm leading-relaxed text-white/80 md:text-base">
-              Este Portfólio reúne e integra aprendizagens desenvolvidas nas disciplinas de Psicologia Positiva e
-              Fases da Vida III, cursadas ao longo do quinto semestre da graduação em Psicologia. Ambas as disciplinas
-              contribuíram de forma significativa para a ampliação da compreensão sobre o comportamento humano,
-              especialmente ao integrar aspectos subjetivos do bem-estar com as transformações que ocorrem ao longo do
-              ciclo vital.
+              Este portfólio reúne e integra aprendizagens desenvolvidas nas disciplinas de Psicologia Positiva e Fases da
+              Vida III, cursadas ao longo do quinto semestre da graduação em Psicologia. Como forma de apresentar esses
+              conteúdos de maneira mais significativa e coerente com as reflexões propostas pelas disciplinas, optei por
+              construir este trabalho no formato de um site inspirado em um museu. Essa escolha não foi apenas estética,
+              mas simbólica: assim como um museu organiza, preserva e dá sentido a experiências, memórias e produções,
+              este portfólio foi pensado como um espaço de exposição do meu próprio processo de desenvolvimento acadêmico
+              e pessoal ao longo do semestre.
+            </p>
+            <p className="mt-4 text-justify text-sm leading-relaxed text-white/78 md:text-base">
+              A proposta do “site-museu” permitiu transformar cada atividade, reflexão e aprendizado em uma espécie de
+              “obra”. Para compor esse espaço, utilizei fotos autorais de visitas a museus, passeios e outros momentos
+              significativos, buscando aproximar ainda mais os visitantes das minhas experiências pessoais. Essas imagens
+              estão presentes como elementos ilustrativos, mas também como parte da construção de significado,
+              reforçando a autenticidade e a ideia de que o aprendizado também se dá a partir das experiências vividas fora
+              do ambiente acadêmico.
             </p>
             <p className="mt-4 text-justify text-sm leading-relaxed text-white/75 md:text-base">
-              A disciplina de Psicologia Positiva proporcionou o contato com uma abordagem relativamente recente dentro
-              da Psicologia, que busca compreender e promover aspectos saudáveis e funcionais da vida humana, ao invés
-              de focar exclusivamente em patologias. Entre os conceitos centrais trabalhados, destacam-se o estudo das
-              emoções positivas, o desenvolvimento das forças de caráter, o engajamento, o sentido de vida e a
-              construção de relacionamentos saudáveis. Um dos principais referenciais teóricos abordados foi o modelo
-              PERMA, proposto por Martin Seligman, que organiza o bem-estar em cinco dimensões: emoções positivas ,
-              engajamento, relacionamentos, sentido e realização. Além disso, foram realizadas atividades como a
-              construção do Ikigai, que favoreceu a reflexão sobre propósito de vida, e análises de produções
-              audiovisuais, como o filme “Soul”, que possibilitaram discutir, de forma prática, questões relacionadas
-              ao sentido da existência e à valorização das experiências cotidianas. Outro ponto relevante na disciplina
-              foi a compreensão de que o bem-estar não é apenas um estado emocional momentâneo, mas um processo
-              contínuo que pode ser desenvolvido por meio de práticas intencionais, como a gratidão, o cultivo de
-              relações positivas e o autoconhecimento. As atividades em grupo e dinâmicas propostas em sala, baseadas
-              em metodologias ativas, contribuíram para uma aprendizagem mais significativa, pois permitiram vivenciar
-              na prática os conceitos estudados, além de estimular a troca de experiências e diferentes perspectivas
-              entre os colegas.
+              A disciplina de Psicologia Positiva proporcionou o contato com uma abordagem relativamente recente dentro da
+              Psicologia, que busca compreender e promover aspectos saudáveis e funcionais da vida humana, ao invés de
+              focar exclusivamente em patologias. Entre os conceitos centrais trabalhados, destacam-se o estudo das
+              emoções positivas, o desenvolvimento das forças de caráter, o engajamento, o sentido de vida e a construção
+              de relacionamentos saudáveis. Um dos principais referenciais teóricos abordados foi o modelo PERMA,
+              proposto por Martin Seligman, que organiza o bem-estar em cinco dimensões: emoções positivas, engajamento,
+              relacionamentos, sentido e realização. Além disso, foram realizadas atividades como a construção do Ikigai,
+              que favoreceu a reflexão sobre propósito de vida, e análises de produções audiovisuais, como o filme “Soul”,
+              que possibilitaram discutir, de forma prática, questões relacionadas ao sentido da existência e à valorização
+              das experiências cotidianas. Reitero sobre o sentido de ter escolhido a temática de museu, pois a arte é uma
+              das minhas grandes paixões e estar imersa nisso me proporciona bem-estar, pude compreender isso melhor
+              durante as aulas dessa disciplina. Outro ponto relevante foi a compreensão de que o bem-estar não é apenas um
+              estado emocional momentâneo, mas um processo contínuo que pode ser desenvolvido por meio de práticas
+              intencionais, como a gratidão, o cultivo de relações positivas e o autoconhecimento. As atividades em grupo
+              e dinâmicas propostas em sala, baseadas em metodologias ativas, contribuíram para uma aprendizagem mais
+              significativa, pois permitiram vivenciar na prática os conceitos estudados, além de estimular a troca de
+              experiências e diferentes perspectivas entre colegas de sala.
             </p>
             <p className="mt-4 text-justify text-sm leading-relaxed text-white/75 md:text-base">
-              A disciplina de Fases da Vida III aprofundou o estudo das etapas do desenvolvimento, com ênfase nas
-              fases adultas e no envelhecimento. A partir de referenciais teóricos clássicos, como Papalia, foi
-              possível compreender que o desenvolvimento humano é um processo contínuo, influenciado por fatores
-              biológicos, psicológicos, sociais e culturais. Foram discutidas as mudanças físicas e cognitivas que
-              ocorrem ao longo da vida, bem como os desafios emocionais e sociais enfrentados em cada etapa. Um dos
-              aspectos mais marcantes dessa disciplina foi a abordagem crítica de temas contemporâneos, como o
-              desenvolvimento psicossocial na vida adulta, adultez emergente no Brasil, a influência da alimentação na
-              qualidade de vida, aspectos psicológicos no envalhecimento, entre outros. Essas discussões ampliaram a
+              A disciplina de Fases da Vida III aprofundou o estudo das etapas do desenvolvimento, com ênfase nas fases
+              adultas e no envelhecimento. A partir de referenciais teóricos, como Desenvolvimento Humano e Tratado de
+              Geriatria e Gerontologia, foi possível compreender que o desenvolvimento humano é um processo contínuo,
+              influenciado por fatores biológicos, psicológicos, sociais e culturais. Foram discutidas as mudanças físicas
+              e cognitivas que ocorrem ao longo da vida, bem como os desafios emocionais e sociais enfrentados em cada
+              etapa. Um dos aspectos mais marcantes dessa disciplina foi a abordagem crítica de temas contemporâneos,
+              como o desenvolvimento psicossocial na vida adulta, adultez emergente no Brasil, a influência da alimentação
+              na qualidade de vida, aspectos psicológicos no envelhecimento, entre outros. Essas discussões ampliaram a
               compreensão sobre como o contexto social impacta diretamente o desenvolvimento humano, reforçando a
               importância de uma visão integral e contextualizada do indivíduo. Além disso, foram realizadas atividades
               baseadas em debates e análises de documentários, como “Você é o que você come”, que contribuíram para a
               reflexão sobre hábitos de vida e suas consequências ao longo do tempo.
             </p>
-            <p className="mt-4 text-justify text-sm leading-relaxed text-white/70 md:text-base">
-              Os objetivos de aprendizagem deste portfólio envolvem a capacidade de compreender os principais conceitos
-              das disciplinas, relacioná-los com situações práticas e desenvolver uma postura crítica e reflexiva
-              diante dos conteúdos estudados. Ao longo do semestre, foi possível perceber um avanço significativo no
-              desenvolvimento acadêmico, especialmente na habilidade de articular teoria e prática, participar das
-              discussões em sala e construir reflexões mais profundas sobre os temas abordados e sobre vida pessoal. Os
-              produtos de aprendizagem aqui apresentados refletem não apenas a compreensão teórica, mas também a
-              vivência prática proporcionada por metodologias ativas, como dinâmicas em grupo, debates, análises de
-              filmes e atividades reflexivas. Entre os principais aprendizados, destacam-se a importância do
-              autoconhecimento, da construção de relações positivas, da promoção do bem-estar ao longo da vida e da
-              compreensão das diferentes fases do desenvolvimento humano em suas múltiplas dimensões.
+            <p className="mt-4 text-justify text-sm leading-relaxed text-white/72 md:text-base">
+              Os objetivos de aprendizagem deste portfólio envolvem a capacidade de compreender os principais conceitos das
+              disciplinas, relacioná-los com situações práticas e desenvolver uma postura crítica e reflexiva diante dos
+              conteúdos estudados. Ao longo do semestre, foi possível perceber um avanço significativo no desenvolvimento
+              acadêmico, especialmente na habilidade de articular teoria e prática, participar das discussões em sala e
+              construir reflexões mais profundas sobre os temas abordados e sobre a própria vida. Os produtos de
+              aprendizagem aqui apresentados refletem não apenas a compreensão teórica, mas também a vivência prática
+              proporcionada por metodologias ativas, como dinâmicas em grupo, debates, análises de filmes e atividades
+              reflexivas. Entre os principais aprendizados, destacam-se a importância do autoconhecimento, da construção
+              de relações positivas, da promoção do bem-estar ao longo da vida e da compreensão das diferentes fases do
+              desenvolvimento humano em suas múltiplas dimensões.
             </p>
             <p className="mt-4 text-justify text-sm leading-relaxed text-white/70 md:text-base">
-              A organização deste portfólio foi realizada a partir da seleção de conteúdos, atividades e experiências
-              que tiveram maior significado pessoal e acadêmico. Foram utilizadas estratégias como anotações de aula,
+              A organização deste portfólio foi realizada a partir da seleção de conteúdos, atividades e experiências que
+              tiveram maior significado pessoal e acadêmico. Foram utilizadas estratégias como anotações de aula,
               registros reflexivos, organização cronológica dos materiais e revisão dos conteúdos trabalhados, visando
-              garantir coerência, clareza e profundidade na apresentação. Por fim, ressalta-se que os trabalhos aqui
-              reunidos foram desenvolvidos durante o quinto semestre do curso, refletindo um processo contínuo de
-              construção do conhecimento, mediado por aulas expositivas, práticas colaborativas e experiências
-              significativas em sala de aula.
+              garantir coerência, clareza e profundidade na apresentação. Assim como em um museu, cada elemento foi
+              cuidadosamente escolhido e posicionado. Por fim, ressalta-se que os trabalhos aqui reunidos foram
+              desenvolvidos durante o quinto semestre do curso, refletindo um processo contínuo de construção do
+              conhecimento, mediado por aulas expositivas, práticas colaborativas e experiências significativas em sala de
+              aula.
             </p>
           </article>
         </div>
@@ -169,7 +181,7 @@ export default function HomePage() {
               <h2 className="relative block w-fit origin-left text-2xl font-bold tracking-wide text-white uppercase drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] transition-transform duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-white/90 after:transition-all after:duration-300 after:content-[''] group-hover:scale-105 group-hover:after:w-full group-active:scale-105 group-active:after:w-full group-focus-visible:scale-105 group-focus-visible:after:w-full">
                 {discipline.title}
               </h2>
-              <span className="mt-4 block text-sm font-semibold text-white/95">Ver atividades</span>
+              <span className="mt-4 block text-sm font-semibold text-white/95">Clique para ver as atividades</span>
             </div>
           </Link>
         ))}
@@ -191,7 +203,7 @@ export default function HomePage() {
                 </span>
               ))}
             </h2>
-            <span className="mt-4 block text-sm font-semibold text-white/95">Ler texto completo</span>
+            <span className="mt-4 block text-sm font-semibold text-white/95">Clique para ver texto completo</span>
           </div>
         </Link>
       </FadeInSection>

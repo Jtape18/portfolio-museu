@@ -193,6 +193,11 @@ export default function ActivityPage() {
 
             {contentImages.length > 0 && (
               <div className="grid gap-4 lg:sticky lg:top-24">
+                <p className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-[0.6875rem] leading-snug tracking-[0.12em] text-white/45 uppercase">
+                  {hasMultipleContentImages
+                    ? 'Clique na imagem para ampliar • use as miniaturas abaixo para outras fotos da série'
+                    : 'Clique na imagem para ampliar e ver com mais detalhe'}
+                </p>
                 <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#0f141e] p-2 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
                   <button
                     type="button"
@@ -262,6 +267,11 @@ export default function ActivityPage() {
                   : 'justify-end'
             }`}
           >
+            {(prevActivity || nextActivity) && (
+              <p className="w-full pb-2 text-[0.6875rem] font-normal tracking-[0.14em] text-white/45 uppercase md:pb-3">
+                Navegue entre as exposições usando os botões abaixo
+              </p>
+            )}
             {prevActivity ? (
               <Link
                 to={`/disciplina/${discipline.id}/atividade/${prevActivity.id}`}

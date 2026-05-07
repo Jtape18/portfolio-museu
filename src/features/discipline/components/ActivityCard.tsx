@@ -34,6 +34,9 @@ export default function ActivityCard({ activity, onOpen }: ActivityCardProps) {
         <h2 className="relative block w-fit origin-left text-lg font-bold text-white transition-transform duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-white/90 after:transition-all after:duration-300 after:content-[''] group-hover:scale-105 group-hover:after:w-full group-active:scale-105 group-active:after:w-full group-focus-visible:scale-105 group-focus-visible:after:w-full md:text-2xl">
           {activity.title}
         </h2>
+        <p className="mt-3 max-w-xl text-[0.6875rem] leading-snug font-normal tracking-[0.14em] text-white/50 uppercase md:text-[0.7rem]">
+          Entre nesta sala — clique ou toque no cartaz
+        </p>
       </div>
     </article>
   )
