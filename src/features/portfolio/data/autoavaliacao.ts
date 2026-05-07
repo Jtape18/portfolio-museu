@@ -3,7 +3,7 @@
 export const AUTOAVALIACAO_ROUTE = '/autoavaliacao-e-novos-objetivos' as const
 
 export const autoavaliacaoSection = {
-  coverImage: '/imagens-museu/A picture of a gallery showing a ship model and two paintings..png',
+  coverImage: '/fotos-marcela/mais fotos/foto8.jpeg',
   titleLines: ['AUTOAVALIAÇÃO', 'E NOVOS OBJETIVOS'] as const,
   /** Parágrafos separados por \\n\\n — usados com whitespace-pre-line */
   body:
@@ -15,3 +15,4 @@ export const autoavaliacaoSection = {
     'Em relação à minha formação profissional, esse semestre foi fundamental para reforçar em mim a importância de uma atuação sensível, ética e comprometida com a realidade dos indivíduos. As discussões sobre envelhecimento, desigualdades sociais e saúde me fizeram perceber que o trabalho do psicólogo vai além da escuta individual, envolvendo também uma compreensão crítica do contexto em que as pessoas estão inseridas. Nesse sentido, um dos meus objetivos é continuar desenvolvendo esse olhar ampliado, buscando uma formação que integre teoria, prática e compromisso social.\n\n' +
     'Por fim, considero que este portfólio evidencia minha evolução ao longo do semestre, tanto no aspecto acadêmico quanto pessoal. Reconheço que ainda tenho muito a aprender, mas também percebo que já dei passos importantes na construção da minha identidade como estudante de Psicologia. A partir dessa autoavaliação, assumo o compromisso de continuar me desenvolvendo, buscando superar minhas dificuldades e aproveitar ao máximo as oportunidades de aprendizagem que surgirem ao longo da minha trajetória.'
 }
+ 
