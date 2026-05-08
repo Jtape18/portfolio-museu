@@ -8,7 +8,7 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
   activities: [
     {
       id: 'ikigai',
-      title: 'Atividade - Ikigai',
+      title: 'Atividade sobre o Ikigai',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.29.49 (4).jpeg',
       contentImage:
         '/fotos-marcela/atividades/psicologia-positiva/reportagem/ikigai/ikigai.jpeg',
@@ -18,7 +18,7 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
     },
     {
       id: 'filme-soul',
-      title: 'Atividade - Filme Soul',
+      title: 'Atividade sobre o filme “Soul”',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.29.49.jpeg',
       contentImage:
         '/fotos-marcela/atividades/psicologia-positiva/reportagem/filme/filmesoul.jpeg',
@@ -26,11 +26,11 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
       contentImageQuote:
         '“A vida é cheia de possibilidades. Você só precisa saber onde procurar. Não perca as alegrias da vida.”\n— Soul, 2020',
       description:
-        'A análise do filme "Soul" foi outro momento significativo, mas descontraído, pois trouxe reflexões sobre o sentido da vida e a valorização das pequenas experiências por meio de uma animação. Nessa atividade, tivemos como objetivo analisar as vivências do personagem Joe e da 22, relacionando-as com a teoria do Bem-Estar Subjetivo e com os conceitos de fluxo e Flow.\n\nApós assistir ao filme, eu e meu grupo discutimos temas como propósito, felicidade e realização pessoal enquanto construíamos o trabalho escrito. O que mais me marcou foi perceber que a vida não precisa necessariamente de um grande objetivo para ter valor, pois o sentido pode estar nas vivências simples do dia a dia.\n\nRelacionei essa ideia com conceitos da Psicologia Positiva, como mindfulness, gratidão e engajamento. A troca de ideias com as minhas colegas foi muito importante, pois me permitiu enxergar diferentes interpretações sobre o filme. Essa atividade contribuiu para que eu desenvolvesse uma visão mais leve e realista sobre o que significa viver bem.'
+        'A análise do filme “Soul” foi outro momento significativo, mas descontraído, pois trouxe reflexões sobre o sentido da vida e a valorização das pequenas experiências através de uma animação. Nessa atividade tivemos como objetivo analisar as vivências do personagem Joe e da 22 ligando com a teoria do Bem-Estar Subjetivo, do Fluxo e do Flow. Após assistir ao filme, eu e meu grupo discutimos temas como propósito, felicidade e realização pessoal enquanto fazíamos o trabalho escrito. O que mais me marcou foi perceber que a vida não precisa necessariamente de um grande objetivo para ter valor, pois o sentido pode estar nas vivências simples do dia a dia. Relacionei essa ideia com conceitos da Psicologia Positiva, como mindfulness, gratidão e engajamento. A troca de ideias com as minhas colegas foi muito importante, pois me permitiu enxergar diferentes interpretações sobre o filme.\n\nAdemais, considerei muito importante a forma como o filme desconstrói a ideia de que sucesso profissional, reconhecimento ou grandes realizações são suficientes para garantir felicidade. Ao longo da atividade, percebi que o filme propõe uma visão mais humana e equilibrada sobre a vida, valorizando os vínculos afetivos, os pequenos prazeres e a presença no momento atual. Essa reflexão se aproximou bastante das discussões feitas em sala sobre bem-estar subjetivo e qualidade de vida, mostrando que uma vida satisfatória não depende apenas de metas alcançadas, mas também da capacidade de apreciar as experiências diárias.\n\nDe maneira geral, essa discussão contribuiu muito para minha formação acadêmica e pessoal. Mais do que compreender conceitos da Psicologia Positiva, consegui refletir sobre minha própria forma de enxergar a vida, meus objetivos e minhas expectativas em relação ao futuro.'
     },
     {
       id: 'reportagem',
-      title: 'Atividade - Reportagem',
+      title: 'Atividade de reportagem em Psicologia Positiva',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.29.49 (3).jpeg',
       contentImage:
         '/fotos-marcela/atividades/psicologia-positiva/reportagem/reportagem/reportagem.jpeg',
@@ -53,14 +53,17 @@ export const psicologiaPositivaDiscipline: PortfolioDiscipline = {
     },
     {
       id: 'circulo-apoio',
-      title: 'Relacionamentos Positivos + Círculo de Apoio',
+      title: 'Aula sobre Intervenções em Psicologia Positiva',
       image: '/fotos-marcela/WhatsApp Image 2026-04-24 at 16.55.58 (1).JPG',
-      contentImage:
-        '/fotos-marcela/atividades/psicologia-positiva/reportagem/relacionamentopositivo/relacionamentos positivos.jpeg',
+      contentImages: [
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/intervpositiva/intervpositiva1.jpeg',
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/intervpositiva/intervpositiva2.jpeg',
+        '/fotos-marcela/atividades/psicologia-positiva/reportagem/intervpositiva/intervpositiva3.jpeg'
+      ],
       contentImageAlt:
-        'Registro em sala da atividade sobre relacionamentos positivos, com citação sobre o amor e os relacionamentos humanos (Snyder) exibida no telão',
+        'Registros da aula e atividade sobre intervenções em Psicologia Positiva',
       description:
-        'A atividade teve como foco os relacionamentos positivos e incluiu a dinâmica do Círculo de Apoio, na qual foi possível identificar pessoas significativas na rede de suporte social. Segundo Martin Seligman, os relacionamentos são um dos pilares do bem-estar. A reflexão proporcionada pela atividade destacou a importância das conexões interpessoais ao longo da vida adulta e na velhice. Foi possível perceber que o apoio social contribui para a saúde emocional e enfrentamento de dificuldades. Na prática, isso se evidencia em indivíduos que mantêm vínculos afetivos sólidos, apresentando maior resiliência e satisfação com a vida.'
+        'A aula sobre Intervenções em Psicologia Positiva foi uma das mais significativas para mim, pois me permitiu compreender como os conceitos estudados na disciplina podem ser aplicados de forma prática na promoção do bem-estar e da saúde mental. Durante a aula, aprendi que a Psicologia Positiva não se limita apenas ao estudo das emoções positivas, mas também desenvolve estratégias e intervenções voltadas ao fortalecimento de aspectos como gratidão, otimismo, resiliência, relacionamentos saudáveis e sentido de vida. Além disso, compreendi que essas práticas possuem fundamentação científica e apresentam resultados positivos na promoção da qualidade de vida e no fortalecimento emocional dos indivíduos.\n\nAlém disso, outro aspecto importante para mim foi entender que as intervenções em Psicologia Positiva não têm como objetivo negar emoções negativas ou criar uma ideia irreal de felicidade constante. Pelo contrário, elas buscam ampliar recursos emocionais e psicológicos que ajudam as pessoas a enfrentarem dificuldades de maneira mais saudável e equilibrada.\n\nAo final da aula, realizamos uma atividade no caderno de gratidão, na qual registrei pessoas, experiências e acontecimentos pelos quais eu me sentia grata. Apesar de simples, essa prática foi muito significativa, pois me fez perceber como frequentemente deixamos de valorizar pequenos aspectos positivos do cotidiano. Enquanto escrevia, consegui refletir sobre a importância das relações, das experiências vividas e das pequenas conquistas que contribuem para o meu bem-estar. Relacionei essa atividade com os conteúdos discutidos em sala, especialmente sobre como a gratidão favorece emoções positivas, fortalece vínculos interpessoais e contribui para uma percepção mais satisfatória da vida.'
     }
   ]
 }
