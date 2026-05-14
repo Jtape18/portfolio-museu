@@ -59,9 +59,10 @@ export default function HomePage() {
             Portfólio
           </h1>
           <p className="hero-reveal hero-reveal-delay-1 mt-2 max-w-3xl text-base font-normal text-white drop-shadow-[0_0_12px_rgba(0,0,0,0.5)] md:text-lg">
-            Apresentação reflexiva das disciplinas Fases da Vida III e Psicologia Positiva sob perspectiva de Marcela
-            Cristinne Camarinha Gonçalves. <br />
-            Centro Universitário do Estado do Pará.
+            Apresentação reflexiva das disciplinas Psicologia Positiva e Fases da Vida III do 5º período de graduação em
+            Psicologia sob perspectiva de Marcela Cristinne Camarinha Gonçalves.
+            <br />
+            Centro Universitário do Estado do Pará, 2026.
           </p>
 
           <div className="mt-5 flex items-center gap-2">
