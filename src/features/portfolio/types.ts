@@ -7,6 +7,8 @@ export interface PortfolioActivity {
   contentImageAlt?: string
   /** Texto exibido abaixo da imagem de conteúdo (ex.: citação). */
   contentImageQuote?: string
+  /** Legendas por índice, alinhadas a `contentImages` (ou à única `contentImage`). */
+  contentImageCaptions?: string[]
   description: string
 }
 

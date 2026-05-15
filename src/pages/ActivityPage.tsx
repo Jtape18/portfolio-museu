@@ -49,6 +49,9 @@ export default function ActivityPage() {
   const contentImages = activity?.contentImages ?? (activity?.contentImage ? [activity.contentImage] : [])
   const hasMultipleContentImages = contentImages.length > 1
   const activeContentImage = contentImages[activeContentImageIndex] ?? contentImages[0]
+  const activeImageCaption = activity?.contentImageCaptions?.[activeContentImageIndex]
+  const activeImageQuote =
+    activeContentImageIndex === 0 && !activeImageCaption ? activity?.contentImageQuote : undefined
   const zoomedImageSrc = zoomedImageIndex !== null ? contentImages[zoomedImageIndex] : null
   const zoomedImageAlt =
     zoomedImageIndex !== null
@@ -130,7 +133,7 @@ export default function ActivityPage() {
 
     const intervalId = window.setInterval(() => {
       setActiveContentImageIndex((currentIndex) => (currentIndex + 1) % contentImages.length)
-    }, 4200)
+    }, 8000)
 
     return () => window.clearInterval(intervalId)
   }, [activityId, contentImages.length])
@@ -219,12 +222,12 @@ export default function ActivityPage() {
                     />
                   </button>
                   <figcaption
-                    className={`px-3 pt-3 pb-3 ${activity.contentImageQuote ? 'text-left' : 'text-xs text-white/60'}`}
+                    className={`px-3 pt-3 pb-3 ${activeImageQuote ? 'text-left' : 'text-xs text-white/60'}`}
                   >
-                    {activity.contentImageQuote ? (
-                      <ContentImageQuoteCaption text={activity.contentImageQuote} />
+                    {activeImageQuote ? (
+                      <ContentImageQuoteCaption text={activeImageQuote} />
                     ) : (
-                      'Registro visual da atividade.'
+                      activeImageCaption ?? 'Registro visual da atividade.'
                     )}
                   </figcaption>
                 </figure>
